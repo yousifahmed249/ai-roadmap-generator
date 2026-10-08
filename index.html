@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مولّد خارطة الطريق بالذكاء الاصطناعي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🗺️</span>
+        <div class="logo-text">
+          <h1 class="site-title">مولّد خارطة الطريق</h1>
+          <span class="site-subtitle">بالذكاء الاصطناعي</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero / Input Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h2 class="hero-heading">اكتشف مسار تعلّمك المثالي</h2>
+        <p class="hero-description">
+          أدخل تخصصك واحصل على خارطة طريق شاملة ومنظّمة تعينك على الوصول إلى الاحتراف خطوة بخطوة
+        </p>
+
+        <div class="input-group">
+          <input
+            type="text"
+            id="specialization-input"
+            class="specialization-input"
+            placeholder="أدخل تخصصك... مثال: تطوير الويب، علم البيانات"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button id="generate-btn" class="generate-btn">
+            <span class="btn-icon">✨</span>
+            <span class="btn-text">توليد خارطة الطريق</span>
+          </button>
+        </div>
+
+        <!-- Example Chips -->
+        <div class="chips-container" aria-label="أمثلة على التخصصات">
+          <span class="chips-label">جرّب:</span>
+          <div class="chips">
+            <button class="chip" data-value="تطوير الويب">تطوير الويب</button>
+            <button class="chip" data-value="علم البيانات">علم البيانات</button>
+            <button class="chip" data-value="الأمن السيبراني">الأمن السيبراني</button>
+            <button class="chip" data-value="تطوير التطبيقات">تطوير التطبيقات</button>
+            <button class="chip" data-value="الذكاء الاصطناعي">الذكاء الاصطناعي</button>
+            <button class="chip" data-value="UI/UX Design">UI/UX Design</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Loading Spinner -->
+  <section id="loading" class="loading-section" hidden aria-live="polite" aria-label="جارٍ التوليد">
+    <div class="container">
+      <div class="loading-content">
+        <div class="spinner"></div>
+        <p class="loading-text">جارٍ توليد خارطة الطريق...</p>
+        <p class="loading-subtext">قد يستغرق ذلك بضع ثوانٍ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Error Message -->
+  <section id="error-message" class="error-section" hidden role="alert" aria-live="assertive">
+    <div class="container">
+      <div class="error-box">
+        <span class="error-icon">⚠️</span>
+        <p class="error-text"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section id="results" class="results-section" hidden>
+    <div class="container">
+
+      <!-- Roadmap Header -->
+      <div class="roadmap-header">
+        <div class="roadmap-header-text">
+          <h2 id="roadmap-title" class="roadmap-title"></h2>
+          <p id="roadmap-description" class="roadmap-description"></p>
+        </div>
+        <div class="roadmap-meta">
+          <div class="duration-badge">
+            <span class="duration-icon">⏱️</span>
+            <span class="duration-label">المدة الإجمالية:</span>
+            <span id="total-duration" class="duration-value"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div id="timeline" class="timeline" aria-label="مراحل خارطة الطريق">
+        <!-- Phase cards injected by JS -->
+      </div>
+
+      <!-- Export Buttons -->
+      <div class="export-actions">
+        <button id="copy-btn" class="export-btn copy-btn">
+          <span>📋</span>
+          <span>نسخ خارطة الطريق</span>
+        </button>
+        <button id="print-btn" class="export-btn print-btn">
+          <span>🖨️</span>
+          <span>طباعة / PDF</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text">
+        مدعوم بـ <strong>Google Gemini AI</strong> · صُمِّم لمساعدتك على رسم مسيرتك التعليمية
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
