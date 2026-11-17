@@ -3,140 +3,287 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>مولّد خارطة الطريق بالذكاء الاصطناعي</title>
+  <meta name="theme-color" content="#0b0b17" />
+  <meta name="description" content="أنشئ خارطة طريق تعليمية مخصصة بالذكاء الاصطناعي." />
+  <title data-i18n="pageTitle">مولّد خارطة الطريق بالذكاء الاصطناعي</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-
-  <!-- Header -->
+<body id="top">
   <header class="site-header">
     <div class="header-inner">
-      <div class="logo">
-        <span class="logo-icon">🗺️</span>
+      <a class="logo" href="#top" aria-label="Roadmap AI">
+        <img class="logo-icon" src="assets/logo.svg" alt="" />
         <div class="logo-text">
-          <h1 class="site-title">مولّد خارطة الطريق</h1>
-          <span class="site-subtitle">بالذكاء الاصطناعي</span>
+          <h1 class="site-title" data-i18n="siteTitle">مولّد خارطة الطريق</h1>
+          <span class="site-subtitle" data-i18n="siteSubtitle">بالذكاء الاصطناعي</span>
         </div>
+      </a>
+      <nav class="main-nav" data-i18n-aria="mainNavigation" aria-label="التنقل الرئيسي">
+        <a href="#generator" data-i18n="navGenerator">المولّد</a>
+        <a href="#saved-resources" data-i18n="navSaved">المصادر المحفوظة</a>
+      </nav>
+      <div class="header-actions">
+        <button id="language-toggle" class="language-toggle" type="button" aria-label="Switch to English">English</button>
+        <a class="header-cta" href="#generator" data-i18n="navStart">ابدأ الآن</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero / Input Section -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="container">
-      <div class="hero-content">
-        <h2 class="hero-heading">اكتشف مسار تعلّمك المثالي</h2>
-        <p class="hero-description">
-          أدخل تخصصك واحصل على خارطة طريق شاملة ومنظّمة تعينك على الوصول إلى الاحتراف خطوة بخطوة
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-bg"></div>
+      <div class="container hero-layout">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-sparkle" aria-hidden="true">✦</span>
+            <span data-i18n="heroEyebrow">تعلّم أذكى، واصل أبعد</span>
+          </div>
+          <h2 id="hero-heading" class="hero-heading" data-i18n="heroHeading">اكتشف مسار تعلّمك المثالي</h2>
+          <p class="hero-description" data-i18n="heroDescription">أدخل تخصصك واحصل على خارطة طريق شاملة ومنظّمة تعينك على الوصول إلى الاحتراف خطوة بخطوة</p>
+          <div class="hero-proof">
+            <span><span class="proof-icon" aria-hidden="true">✓</span><span data-i18n="proofPersonalized">مصمّم حسب أهدافك</span></span>
+            <span><span class="proof-icon" aria-hidden="true">✓</span><span data-i18n="proofActionable">خطوات عملية واضحة</span></span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="visual-glow"></div>
+          <div class="preview-card">
+            <div class="preview-topline">
+              <span class="preview-brand-mark">✦</span>
+              <span data-i18n="previewLabel">خارطتك، على مقاسك</span>
+              <span class="preview-dots">•••</span>
+            </div>
+            <div class="preview-heading">
+              <span class="preview-icon">⌘</span>
+              <div>
+                <strong data-i18n="previewRoadmap">مسار تطوير الويب</strong>
+                <small data-i18n="previewDuration">رحلة متدرجة نحو الاحتراف</small>
+              </div>
+            </div>
+            <div class="preview-progress-label">
+              <span data-i18n="previewProgress">مسارك يبدأ من هنا</span>
+              <span>01 / 04</span>
+            </div>
+            <div class="preview-progress"><span></span></div>
+            <div class="preview-steps">
+              <div class="preview-step is-current"><span class="step-index">01</span><span data-i18n="previewStepOne">الأساسيات</span><i></i></div>
+              <div class="preview-step"><span class="step-index">02</span><span data-i18n="previewStepTwo">أدوات التطوير</span><i></i></div>
+              <div class="preview-step"><span class="step-index">03</span><span data-i18n="previewStepThree">مشاريع عملية</span><i></i></div>
+            </div>
+            <div class="preview-footer"><span class="ai-spark">✦</span><span data-i18n="previewFooter">خطة شخصية مدعومة بالذكاء الاصطناعي</span></div>
+          </div>
+          <div class="floating-chip floating-chip-top"><span>✦</span><span data-i18n="visualChipTop">خطة تناسبك</span></div>
+          <div class="floating-chip floating-chip-bottom"><span>↗</span><span data-i18n="visualChipBottom">خطوة بخطوة</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="generator" class="generator-section" aria-labelledby="generator-heading">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-kicker" data-i18n="generatorKicker">ابدأ رحلتك</span>
+          <h2 id="generator-heading" data-i18n="generatorHeading">ابنِ خارطة طريقك</h2>
+          <p data-i18n="generatorDescription">أخبرنا بما تريد تعلّمه، وسنرتّب لك الطريق خطوة بخطوة.</p>
+        </div>
+        <div class="generator-card">
+          <div class="generator-card-heading">
+            <div class="generator-card-icon" aria-hidden="true">✦</div>
+            <div>
+              <h3 data-i18n="formTitle">خصّص مسار تعلّمك</h3>
+              <p data-i18n="formDescription">ابدأ بتخصصك، وأضف أهدافك للحصول على خطة أقرب لما تحتاجه.</p>
+            </div>
+          </div>
+          <label class="field-label" for="specialization-input" data-i18n="specializationLabel">ما المجال الذي تريد تعلّمه؟</label>
+          <div class="input-group">
+            <div class="specialization-field">
+              <span class="field-icon" aria-hidden="true">⌕</span>
+              <input type="text" id="specialization-input" class="specialization-input" data-i18n-placeholder="specializationPlaceholder" placeholder="أدخل تخصصك... مثال: تطوير الويب، علم البيانات" autocomplete="off" spellcheck="false" />
+            </div>
+            <button id="generate-btn" class="generate-btn" type="button">
+              <span class="btn-icon" aria-hidden="true">✦</span>
+              <span class="btn-text" data-i18n="generateButton">توليد خارطة الطريق</span>
+              <span class="btn-arrow" aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <div class="api-key-area">
+            <label class="field-label" for="api-key-input" data-i18n="apiKeyLabel">مفتاح Gemini API</label>
+            <div class="api-key-row">
+              <input type="password" id="api-key-input" class="api-key-input" data-i18n-placeholder="apiKeyPlaceholder" placeholder="أدخل مفتاح Gemini API" autocomplete="off" />
+              <button id="save-key-btn" class="secondary-btn" type="button" data-i18n="saveKeyButton">حفظ المفتاح</button>
+            </div>
+            <p class="api-key-help">
+              <span data-i18n="apiKeyHelpStart">لإنشاء مفتاحك الخاص، سجّل الدخول إلى</span>
+              <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" data-i18n="apiKeyHelpLink">Google AI Studio</a>
+              <span data-i18n="apiKeyHelpEnd">، اختر Get API Key ثم Create API Key، وانسخ المفتاح والصقه هنا. لا تشاركه مع الآخرين.</span>
+            </p>
+          </div>
+          <div class="goals-panel">
+            <div class="goals-label-row">
+              <label for="goals-input" class="goals-label" data-i18n="goalsLabel">أهدافك التعليمية (اختياري)</label>
+              <button id="goals-clear-btn" class="goals-clear-btn" type="button" data-i18n="goalsClear">مسح</button>
+            </div>
+            <textarea id="goals-input" class="goals-input" rows="3" data-i18n-placeholder="goalsPlaceholder" placeholder="مثال: بناء مشروع عملي، إتقان Git، كتابة CV"></textarea>
+            <p class="goals-help" data-i18n="goalsHint">سيُدرج هذه الأهداف في رسالة الذكاء الاصطناعي لتخصيص الخريطة</p>
+          </div>
+          <div class="suggestions">
+            <div class="chips-container" data-i18n-aria="chipsLabel" aria-label="أمثلة على التخصصات">
+              <span class="chips-label" data-i18n="tryLabel">جرّب:</span>
+              <div class="chips">
+                <button class="chip" type="button" data-i18n="webDev">تطوير الويب</button>
+                <button class="chip" type="button" data-i18n="dataScience">علم البيانات</button>
+                <button class="chip" type="button" data-i18n="cybersecurity">الأمن السيبراني</button>
+                <button class="chip" type="button" data-i18n="appDev">تطوير التطبيقات</button>
+                <button class="chip" type="button" data-i18n="ai">الذكاء الاصطناعي</button>
+                <button class="chip" type="button" data-i18n="uiux">UI/UX Design</button>
+              </div>
+            </div>
+          </div>
+          <p class="privacy-note"><span aria-hidden="true">▣</span><span data-i18n="privacyNote">مفتاحك وأهدافك محفوظة محلياً في هذا المتصفح.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="saved-resources" class="saved-resources-section" aria-labelledby="saved-resources-title">
+      <div class="container">
+        <div class="saved-resources-panel">
+          <div class="saved-resources-heading">
+            <div class="saved-heading-copy">
+              <span class="section-kicker" data-i18n="savedKicker">مكتبتك الشخصية</span>
+              <h2 id="saved-resources-title" data-i18n="savedResourcesTitle">المصادر المحفوظة</h2>
+            </div>
+            <span id="saved-resources-count" class="saved-resources-count" aria-live="polite"></span>
+          </div>
+          <div id="saved-resources-empty" class="saved-resources-empty">
+            <div class="empty-state-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" focusable="false"><path d="M18 10h22l9 9v35H18z"/><path d="M40 10v10h9M25 31h17M25 39h17M25 47h10"/></svg>
+            </div>
+            <p data-i18n="savedResourcesEmpty">لم تحفظ أي مصادر بعد.</p>
+            <span data-i18n="savedResourcesEmptyHint">احفظ المصادر المفيدة أثناء استكشاف خارطتك وستجدها هنا.</span>
+          </div>
+          <ul id="saved-resources-list" class="saved-resources-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="loading" class="loading-section" hidden aria-live="polite" data-i18n-aria="loadingLabel" aria-label="جارٍ التوليد">
+      <div class="container">
+        <div class="loading-content">
+          <div class="spinner"></div>
+          <p class="loading-text" data-i18n="loadingText">جارٍ توليد خارطة الطريق...</p>
+          <p class="loading-subtext" data-i18n="loadingSubtext">قد يستغرق ذلك بضع ثوانٍ</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="error-message" class="error-section" hidden role="alert" aria-live="assertive">
+      <div class="container">
+        <div class="error-box">
+          <span class="error-icon" aria-hidden="true">!</span>
+          <p class="error-text"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="results-section" hidden>
+      <div class="container">
+        <div class="roadmap-header">
+          <div class="roadmap-header-text">
+            <span class="section-kicker" data-i18n="roadmapKicker">مسار التعلّم</span>
+            <h2 id="roadmap-title" class="roadmap-title"></h2>
+            <p id="roadmap-description" class="roadmap-description"></p>
+          </div>
+          <div class="roadmap-meta">
+            <div class="duration-badge">
+              <span class="duration-icon" aria-hidden="true">◷</span>
+              <span class="duration-label" data-i18n="totalDuration">المدة الإجمالية:</span>
+              <span id="total-duration" class="duration-value"></span>
+            </div>
+          </div>
+        </div>
+
+        <section class="progress-panel" aria-labelledby="progress-title">
+          <div class="progress-panel-heading">
+            <h2 id="progress-title" data-i18n="progressTitle">متابعة التقدم</h2>
+            <span id="progress-summary" class="progress-summary" aria-live="polite"></span>
+          </div>
+          <div id="overall-progress-track" class="progress-track overall-progress-track" role="progressbar" aria-labelledby="progress-title" aria-label="التقدم الإجمالي" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="overall-progress-bar" class="progress-bar"></div>
+          </div>
+        </section>
+
+        <div id="timeline" class="timeline" data-i18n-aria="timelineLabel" aria-label="مراحل خارطة الطريق"></div>
+
+        <section class="study-schedule" aria-labelledby="schedule-title">
+          <div class="schedule-settings">
+            <fieldset class="schedule-days-fieldset">
+              <legend data-i18n="studyDaysLabel">أيام الدراسة</legend>
+              <div class="schedule-day-options">
+                <label><input type="checkbox" name="study-day" value="sat" checked /><span data-i18n="daySaturday">السبت</span></label>
+                <label><input type="checkbox" name="study-day" value="sun" checked /><span data-i18n="daySunday">الأحد</span></label>
+                <label><input type="checkbox" name="study-day" value="mon" checked /><span data-i18n="dayMonday">الإثنين</span></label>
+                <label><input type="checkbox" name="study-day" value="tue" checked /><span data-i18n="dayTuesday">الثلاثاء</span></label>
+                <label><input type="checkbox" name="study-day" value="wed" checked /><span data-i18n="dayWednesday">الأربعاء</span></label>
+                <label><input type="checkbox" name="study-day" value="thu" checked /><span data-i18n="dayThursday">الخميس</span></label>
+                <label><input type="checkbox" name="study-day" value="fri" /><span data-i18n="dayFriday">الجمعة</span></label>
+              </div>
+            </fieldset>
+            <div class="session-duration-control">
+              <label for="session-duration-select" data-i18n="sessionDurationLabel">مدة الجلسة:</label>
+              <select id="session-duration-select" class="schedule-day-select">
+                <option value="30">30</option>
+                <option value="45">45</option>
+                <option value="60" selected>60</option>
+                <option value="90">90</option>
+                <option value="120">120</option>
+              </select>
+              <span data-i18n="minutesUnit">دقيقة</span>
+            </div>
+          </div>
+          <div class="schedule-heading">
+            <div>
+              <h2 id="schedule-title" data-i18n="scheduleTitle">📅 جدول الدراسة المقترح</h2>
+              <p id="schedule-description"></p>
+            </div>
+            <div class="schedule-tabs" role="tablist" data-i18n-aria="scheduleViewLabel" aria-label="طريقة عرض الجدول">
+              <button id="weekly-tab" class="schedule-tab active" type="button" role="tab" aria-selected="true" aria-controls="weekly-schedule" data-i18n="weeklyTab">أسبوعي</button>
+              <button id="daily-tab" class="schedule-tab" type="button" role="tab" aria-selected="false" aria-controls="daily-schedule" data-i18n="dailyTab">يومي</button>
+            </div>
+          </div>
+          <div id="weekly-schedule" class="schedule-view" role="tabpanel" aria-labelledby="weekly-tab">
+            <div id="weekly-schedule-list" class="weekly-schedule-list"></div>
+          </div>
+          <div id="daily-schedule" class="schedule-view" role="tabpanel" aria-labelledby="daily-tab" hidden>
+            <label class="schedule-day-label" for="schedule-day-select" data-i18n="chooseDay">اختر يوماً لعرض تفاصيل جلسة الدراسة:</label>
+            <select id="schedule-day-select" class="schedule-day-select"></select>
+            <div id="daily-schedule-details"></div>
+          </div>
+        </section>
+
+        <div class="export-actions">
+          <button id="copy-btn" class="export-btn copy-btn" type="button"><span aria-hidden="true">▣</span><span data-i18n="copyButton">نسخ الخارطة والجدول</span></button>
+          <button id="print-btn" class="export-btn print-btn" type="button"><span aria-hidden="true">↥</span><span data-i18n="printButton">طباعة / PDF</span></button>
+        </div>
+      </div>
+    </section>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <a class="footer-brand" href="#top"><img src="assets/logo.svg" alt="" /><span data-i18n="siteTitle">مولّد خارطة الطريق</span></a>
+        <p class="footer-text">
+          <span data-i18n="footerText">مدعوم بـ</span> <strong>Google Gemini AI</strong> <span data-i18n="footerTextEnd">· صُمِّم لمساعدتك على رسم مسيرتك التعليمية</span>
         </p>
-
-        <div class="input-group">
-          <input
-            type="text"
-            id="specialization-input"
-            class="specialization-input"
-            placeholder="أدخل تخصصك... مثال: تطوير الويب، علم البيانات"
-            autocomplete="off"
-            spellcheck="false"
-          />
-          <button id="generate-btn" class="generate-btn">
-            <span class="btn-icon">✨</span>
-            <span class="btn-text">توليد خارطة الطريق</span>
-          </button>
-        </div>
-
-        <!-- Example Chips -->
-        <div class="chips-container" aria-label="أمثلة على التخصصات">
-          <span class="chips-label">جرّب:</span>
-          <div class="chips">
-            <button class="chip" data-value="تطوير الويب">تطوير الويب</button>
-            <button class="chip" data-value="علم البيانات">علم البيانات</button>
-            <button class="chip" data-value="الأمن السيبراني">الأمن السيبراني</button>
-            <button class="chip" data-value="تطوير التطبيقات">تطوير التطبيقات</button>
-            <button class="chip" data-value="الذكاء الاصطناعي">الذكاء الاصطناعي</button>
-            <button class="chip" data-value="UI/UX Design">UI/UX Design</button>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Loading Spinner -->
-  <section id="loading" class="loading-section" hidden aria-live="polite" aria-label="جارٍ التوليد">
-    <div class="container">
-      <div class="loading-content">
-        <div class="spinner"></div>
-        <p class="loading-text">جارٍ توليد خارطة الطريق...</p>
-        <p class="loading-subtext">قد يستغرق ذلك بضع ثوانٍ</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Error Message -->
-  <section id="error-message" class="error-section" hidden role="alert" aria-live="assertive">
-    <div class="container">
-      <div class="error-box">
-        <span class="error-icon">⚠️</span>
-        <p class="error-text"></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Results Section -->
-  <section id="results" class="results-section" hidden>
-    <div class="container">
-
-      <!-- Roadmap Header -->
-      <div class="roadmap-header">
-        <div class="roadmap-header-text">
-          <h2 id="roadmap-title" class="roadmap-title"></h2>
-          <p id="roadmap-description" class="roadmap-description"></p>
-        </div>
-        <div class="roadmap-meta">
-          <div class="duration-badge">
-            <span class="duration-icon">⏱️</span>
-            <span class="duration-label">المدة الإجمالية:</span>
-            <span id="total-duration" class="duration-value"></span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Timeline -->
-      <div id="timeline" class="timeline" aria-label="مراحل خارطة الطريق">
-        <!-- Phase cards injected by JS -->
-      </div>
-
-      <!-- Export Buttons -->
-      <div class="export-actions">
-        <button id="copy-btn" class="export-btn copy-btn">
-          <span>📋</span>
-          <span>نسخ خارطة الطريق</span>
-        </button>
-        <button id="print-btn" class="export-btn print-btn">
-          <span>🖨️</span>
-          <span>طباعة / PDF</span>
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Toast Notification -->
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p class="footer-text">
-        مدعوم بـ <strong>Google Gemini AI</strong> · صُمِّم لمساعدتك على رسم مسيرتك التعليمية
-      </p>
-    </div>
-  </footer>
-
+    </footer>
+  </main>
   <script src="app.js" defer></script>
 </body>
 </html>
